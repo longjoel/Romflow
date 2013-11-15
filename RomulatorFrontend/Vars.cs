@@ -40,7 +40,7 @@ namespace RomulatorFrontend
             {
                 return System.IO.Path.Combine(
                   ApplicationRootPath,
-                   "RomFlow", "settings.dat");
+                    "settings.dat");
             }
         }
 
@@ -50,7 +50,7 @@ namespace RomulatorFrontend
             {
                 return System.IO.Path.Combine(
                    ApplicationRootPath,
-                   "RomFlow", "stats.sqlite");
+                    "stats.sqlite");
             }
         }
 
