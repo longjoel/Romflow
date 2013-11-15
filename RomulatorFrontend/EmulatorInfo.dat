@@ -1,0 +1,10 @@
+﻿NES, http://sourceforge.net/projects/fceultra/files/Binaries/2.2.1/fceux-2.2.1-win32.zip, %ROM%, *.zip|*.nes, fceux.exe
+SNES, http://prdownloads.sourceforge.net/zsnes/zsnesw151.zip, %ROM%, *.zip|*.smc, zsnesw.exe
+Visual Boy Advance (GBA), http://downloads.sourceforge.net/project/vba/VisualBoyAdvance/1.7.2/VisualBoyAdvance-1.7.2.zip, %ROM%, *.zip|*.gba ,VisualBoyAdvance.exe
+Visual Boy Advance (GB/GBC), http://downloads.sourceforge.net/project/vba/VisualBoyAdvance/1.7.2/VisualBoyAdvance-1.7.2.zip, %ROM%, *.zip|*.gb|*.gbc ,VisualBoyAdvance.exe
+DeSmuME (Nintendo DS), http://downloads.sourceforge.net/project/desmume/desmume/0.9.9/desmume-0.9.9-win32.zip, %ROM%, *.zip|*.nds ,DeSmuME_0.9.9_x86.exe
+Playstation 2, http://pcsx2.net/download/releases/windows/finish/6-windows/89-pcsx2-1-0-0-windows-binary.html, %ROM%, *.iso, pcsx2-r5350.exe
+Genesis, http://www.eidolons-inn.net/tiki-download_file.php?fileId=574, %ROM%, *.zip|*.bin, Fusion364\Fusion.exe
+Gamecube -- Wii, http://dl.dolphin-emu.org/releases/dolphin-3.5-x86.exe, -e %ROM% -b, *.GCM|*.ISO|*.GCZ|*.CISO|*.WBFS, Dolphin-3.5-x86\Dolphin.exe  
+MAME, http://www.mame.net/downloader.php?file=releases/mame0148b_i686.exe, -nomax -w -rp %ROMPATH% %ROM%, *.zip ,mamepp.exe
+Playstation 1,http://www.romcollector.com/storage/emulators/psx/pSX_1_13.rar, %ROM%, *.bin|*.iso, psxfin.exe

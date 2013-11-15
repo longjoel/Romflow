@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1182294-EDF0-4F3E-99B8-FE0ADAFD3A32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RomulatorFrontend</RootNamespace>
+    <AssemblyName>RomFlow</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>ftp://ftp.romflow.com/app469818862/wp-content/uploads/Nightlies/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ErrorReportUrl>http://www.romflow.com</ErrorReportUrl>
+    <ProductName>RomFlow Game Management Tool</ProductName>
+    <PublisherName>Joel Longanecker</PublisherName>
+    <SuiteName>RomFlow</SuiteName>
+    <WebPage>publish.html</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>39</ApplicationRevision>
+    <ApplicationVersion>1.0.0.39</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>50B056BAFD57F146E543E234A1291CA54D5FE126</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>RomFlowFrontend_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="SQLite.Designer">
+      <HintPath>dep\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>dep\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>dep\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\PlayStats.cs" />
+    <Compile Include="Controller\ScriptingHostController.cs" />
+    <Compile Include="Model\ConfigurationEnvironmentStartupCommand.cs" />
+    <Compile Include="Vars.cs" />
+    <Compile Include="GetNetShares.cs" />
+    <Compile Include="Model\ConfigurationEmulator.cs" />
+    <Compile Include="Model\ConfigurationEnvironment.cs" />
+    <Compile Include="Model\ConfigurationGamePad.cs" />
+    <Compile Include="Model\ConfigurationGamePadCollection.cs" />
+    <Compile Include="Model\ConfigurationRoot.cs" />
+    <Compile Include="Model\ConfigurationEmulatorCollection.cs" />
+    <Compile Include="Model\Gamepad.cs" />
+    <Compile Include="Model\GamepadCollection.cs" />
+    <Compile Include="View\ConfigurationEmulator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurationEmulator.Designer.cs">
+      <DependentUpon>ConfigurationEmulator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurationEmulatorCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurationEmulatorCollection.Designer.cs">
+      <DependentUpon>ConfigurationEmulatorCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurationEnvironmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurationEnvironmentForm.Designer.cs">
+      <DependentUpon>ConfigurationEnvironmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurationGamePad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurationGamePad.Designer.cs">
+      <DependentUpon>ConfigurationGamePad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurationGamePadCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurationGamePadCollection.Designer.cs">
+      <DependentUpon>ConfigurationGamePadCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="RomFlowLicense.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UnRAR.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UnRarlicense.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\ConfigurationEmulator.resx">
+      <DependentUpon>ConfigurationEmulator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurationEmulatorCollection.resx">
+      <DependentUpon>ConfigurationEmulatorCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurationEnvironmentForm.resx">
+      <DependentUpon>ConfigurationEnvironmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurationGamePad.resx">
+      <DependentUpon>ConfigurationGamePad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurationGamePadCollection.resx">
+      <DependentUpon>ConfigurationGamePadCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="7za.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="7zalicense.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\animated-overlay.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_flat_0_aaaaaa_40x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_flat_0_eeeeee_40x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_flat_55_c0402a_40x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_flat_55_eeeeee_40x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_glass_100_f8f8f8_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_glass_35_dddddd_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_glass_60_eeeeee_1x400.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_inset-hard_75_999999_1x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_inset-soft_50_c9c9c9_1x100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_3383bb_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_454545_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_70b2e1_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_999999_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_fbc856_256x240.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\jquery-ui-1.10.3.custom.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\css\overcast\jquery-ui-1.10.3.custom.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\js\jquery-1.9.1.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\js\jquery-ui-1.10.3.custom.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\js\jquery-ui-1.10.3.custom.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\js\JSON.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\Menu.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Menu\RomFlowJS.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Rain\Index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="DefaultThemes\Rain\RainTheme.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="DefaultThemes\Rain\RainTheme.xap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Rain\RainThemeTestPage.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="DefaultThemes\Rain\System.ComponentModel.DataAnnotations.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="DefaultThemes\Rain\romflow.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\Rain\System.ComponentModel.DataAnnotations.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="DefaultThemes\Rain\System.Windows.Controls.Data.Input.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="DefaultThemes\Rain\System.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="DefaultThemes\Rain\System.Json.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="DefaultThemes\Rain\System.Runtime.Serialization.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="DefaultThemes\Rain\System.Runtime.Serialization.Json.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="DefaultThemes\Rain\System.Windows.Controls.Data.Input.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="DefaultThemes\Rain\System.Windows.Controls.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="DefaultThemes\Rain\System.Windows.Controls.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="EmulatorInfo.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DefaultThemes\Rain\AppManifest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
