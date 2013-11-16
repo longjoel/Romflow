@@ -27,11 +27,17 @@ namespace RomulatorFrontend.View
 
         private void SetPathEmulatorButton_Click(object sender, EventArgs e)
         {
+            var openemupath = this.EmulatorPathTextBox.Text;
+
+            if (openemupath == string.Empty || !System.IO.Directory.Exists(openemupath))
+                openemupath = Vars.EmulatorRootPath;
+
+
             var fd = new OpenFileDialog()
             {
                 Filter = "Executable files (*.exe)|*.exe",
                 Title = "Open Emulator",
-                InitialDirectory = System.IO.Path.GetDirectoryName( this.EmulatorPathTextBox.Text),
+                InitialDirectory = openemupath,
                 AutoUpgradeEnabled = true,
                
             };

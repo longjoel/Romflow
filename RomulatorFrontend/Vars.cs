@@ -59,9 +59,14 @@ namespace RomulatorFrontend
         {
             get
             {
-                return System.IO.Path.Combine(
+                var emuRootPath = System.IO.Path.Combine(
                     ApplicationRootPath,
-                    "RomFlow", "Emulators");
+                     "Emulators");
+
+                if(!Directory.Exists(emuRootPath))
+                    Directory.CreateDirectory(emuRootPath);
+
+                return emuRootPath;
             }
         }
 

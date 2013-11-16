@@ -36,6 +36,7 @@
             this.DownloadEmulatorButton = new System.Windows.Forms.Button();
             this.EmulatorListingComboBox = new System.Windows.Forms.ComboBox();
             this.DownloadProgressBar = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -44,13 +45,14 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.EmulatorCollectionTabControl, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.EmulatorCollectionTabControl, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(772, 623);
@@ -59,10 +61,10 @@
             // EmulatorCollectionTabControl
             // 
             this.EmulatorCollectionTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EmulatorCollectionTabControl.Location = new System.Drawing.Point(3, 3);
+            this.EmulatorCollectionTabControl.Location = new System.Drawing.Point(3, 21);
             this.EmulatorCollectionTabControl.Name = "EmulatorCollectionTabControl";
             this.EmulatorCollectionTabControl.SelectedIndex = 0;
-            this.EmulatorCollectionTabControl.Size = new System.Drawing.Size(766, 576);
+            this.EmulatorCollectionTabControl.Size = new System.Drawing.Size(766, 558);
             this.EmulatorCollectionTabControl.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -137,6 +139,16 @@
             this.DownloadProgressBar.Size = new System.Drawing.Size(193, 23);
             this.DownloadProgressBar.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(348, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "When you leave this form, your configuration will automatically be saved.";
+            // 
             // ConfigurationEmulatorCollection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +159,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Emulator Configuration";
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -162,5 +175,6 @@
         private System.Windows.Forms.Button DownloadEmulatorButton;
         private System.Windows.Forms.ComboBox EmulatorListingComboBox;
         private System.Windows.Forms.ProgressBar DownloadProgressBar;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -487,12 +487,12 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(348, 111);
+            this.label11.Location = new System.Drawing.Point(348, 117);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(303, 39);
+            this.label11.Size = new System.Drawing.Size(303, 26);
             this.label11.TabIndex = 5;
             this.label11.Text = "This feature requires RomFlow to be run as an administrator as well as file shari" +
-    "ng to be enabled on this computer. See the following link for more information.";
+    "ng to be enabled on this computer.";
             // 
             // label10
             // 
