@@ -18,7 +18,7 @@ namespace RomulatorFrontend.Controller
             if (!File.Exists(Vars.StatsDatabase))
             {
 
-                if(!Directory.Exists(Path.GetDirectoryName(Vars.StatsDatabase)))
+                if (!Directory.Exists(Path.GetDirectoryName(Vars.StatsDatabase)))
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(Vars.StatsDatabase));
                 }
@@ -98,7 +98,7 @@ namespace RomulatorFrontend.Controller
             getRatingCmd.Parameters.AddWithValue("@rom", rom);
             try
             {
-                result = (long) getRatingCmd.ExecuteScalar();
+                result = (long)getRatingCmd.ExecuteScalar();
             }
             catch { }
             m_dbConnection.Close();
@@ -180,7 +180,7 @@ namespace RomulatorFrontend.Controller
 
             playcount = (int)px;
 
-         
+
 
             m_dbConnection.Close();
 

@@ -187,6 +187,11 @@ namespace RomulatorFrontend.Controller
             return PlayStats.GetRating(emulator, rom);
         }
 
+        public int GetPlayCount(string emulator, string rom)
+        {
+            return PlayStats.GetPlayCount(emulator, rom);
+        }
+
 
 
         public string GetNetworkSharePath()
