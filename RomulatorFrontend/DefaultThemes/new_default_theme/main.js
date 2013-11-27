@@ -11,8 +11,8 @@ function build_romflow_game_tree() {
         html.push("<h1>" + emulator + "</h1>");
         html.push("<ul>");
 
-        var roms = RomFlowJS.CLIENT.GetRoms(emulator);
-        
+        var roms = RomFlowJS.CLIENT.GetRoms(emulator); //.slice(0,100);
+
         for (j = 0; j < roms.length; j++) {
             html.push("<li><a href='#'>");
             html.push(roms[j]);
@@ -26,24 +26,26 @@ function build_romflow_game_tree() {
 
     html.push("</ul>");
 
-    return html.join('');
+    var joined = html.join('');
+
+    return joined;
 
 }
 
 
 $(document).ready(function () {
 
-    $('#romflow_container').append(build_romflow_game_tree);
+    $('#romflow_container').html(build_romflow_game_tree);
 
     // selectors used for the whole document
     var q_sections = 'ul.romflow_gametree li ul';
-    var q_visible_items = 'ul.romflow_gametree li ul:visible a';
+    var q_visible_items = 'ul.romflow_gametree li ul:visible li a';
 
     // 'global' variables row and column
     var section_index = 0;
     var item_index = 0;
 
-    var display_degrees = 5
+    var display_degrees = 3
 
     // function to select the section
     var select_section = function (index) {
@@ -53,27 +55,51 @@ $(document).ready(function () {
 
     // function to select 
     var select_item = function (index) {
-        for (i = 0; i < $(q_visible_items).length; i++) {
-            if (Math.abs(i - index) < display_degrees) {
-                var degree = Math.abs(i - index);
-                var ix = $(q_visible_items).eq(i);
+
+        $(q_visible_items).hide();
+
+        for (i = Math.max(index - display_degrees, 0); Math.min(i < index + display_degrees + 1, $(q_visible_items).length); i++) {
+            
+            var ix = $(q_visible_items).eq(i );
+        
+            if (Math.abs(index - i) <= display_degrees) {
+                
+                var degree = Math.abs(index - i);
+
                 if (degree === 0) {
                     ix.width(100);
                     ix.height(100);
-                } else if (degree === 1) {
+                    ix.show();
+                } else if (degree == 1) {
                     ix.width(75);
                     ix.height(75);
-                } else {
+                    ix.show();
+                } else if (degree == 2) {
                     ix.width(50);
                     ix.height(50);
+                    ix.show();
+                } else if (degree >= 3 && degree <= display_degrees) {
+                    ix.width(25);
+                    ix.height(25);
+                    ix.show();
+                }
+                else {
+                    ix.hide();
                 }
 
-                ix.show();
             } else {
-                $(q_visible_items).eq(i).hide();
+                ix.hide();
             }
 
+
         }
+
+        $(q_visible_items).removeClass('romflow_selected_item');
+        $(q_visible_items).eq(index).addClass('romflow_selected_item');
+
+
+
+
     };
 
     var next_section = function () {
