@@ -14,6 +14,7 @@ ul.romflow_gametree li ul
     display: block;
     list-style: none;
     white-space: nowrap;
+    text-align: center;
 }
 ul.romflow_gametree li ul li
 {
@@ -26,14 +27,16 @@ ul.romflow_gametree li ul li a
     height: 100px;
     border-style: solid;
     border-width: 5px;
-    border-color:Black;
+    border-color: Black;
     overflow: hidden;
 }
+
+
 .romflow_selected_item
 {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border-style: solid;
     border-width: 5px;
     border-color: Red !important;

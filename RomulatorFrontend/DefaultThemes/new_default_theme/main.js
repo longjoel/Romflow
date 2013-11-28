@@ -1,3 +1,5 @@
+
+/// <reference path="romflow.js"/>
 function build_romflow_game_tree() {
     var html = [];
     html.push("<ul class='romflow_gametree'>");
@@ -14,7 +16,7 @@ function build_romflow_game_tree() {
         var roms = RomFlowJS.CLIENT.GetRoms(emulator); //.slice(0,100);
 
         for (j = 0; j < roms.length; j++) {
-            html.push("<li><a href='#'>");
+            html.push("<li><a href='#' data-action = 'load_rom' data-emulator = '" + emulator + "' data-rom='" + roms[j] + "'>");
             html.push(roms[j]);
             html.push("</a></li>");
         }
@@ -45,30 +47,45 @@ $(document).ready(function () {
     var section_index = 0;
     var item_index = 0;
 
-    var display_degrees = 3
+    var display_degrees = 3;
 
     // function to select the section
     var select_section = function (index) {
         $(q_sections).hide();
         $(q_sections).eq(index).show();
+        section_index = index;
     };
 
     // function to select 
     var select_item = function (index) {
 
         $(q_visible_items).hide();
-
+        $(q_visible_items).unbind('click');
+        $('*').removeClass('romflow_selected_item');
         for (i = Math.max(index - display_degrees, 0); Math.min(i < index + display_degrees + 1, $(q_visible_items).length); i++) {
-            
-            var ix = $(q_visible_items).eq(i );
-        
+
+            var ix = $(q_visible_items).eq(i);
+
             if (Math.abs(index - i) <= display_degrees) {
-                
+
                 var degree = Math.abs(index - i);
 
                 if (degree === 0) {
                     ix.width(100);
                     ix.height(100);
+                    ix.addClass('romflow_selected_item');
+
+                    $('.romflow_selected_item').click(function () {
+                        if ($(this).attr('data-action') == "load_rom") {
+                            var emu = $(this).attr('data-emulator');
+                            var rom = $(this).attr('data-rom');
+                           
+                            RomFlowJS.CLIENT.ExecuteRom(emu, rom);
+                        }
+                        //alert();
+
+                    });
+
                     ix.show();
                 } else if (degree == 1) {
                     ix.width(75);
@@ -94,8 +111,8 @@ $(document).ready(function () {
 
         }
 
-        $(q_visible_items).removeClass('romflow_selected_item');
-        $(q_visible_items).eq(index).addClass('romflow_selected_item');
+
+        //$(q_visible_items).eq(index).addClass('romflow_selected_item');
 
 
 
@@ -156,10 +173,15 @@ $(document).ready(function () {
         select_item(item_index);
     };
 
+    var exec_rom = function () {
+        $('.romflow_selected_item').click();
+    }
+
     RomFlowJS.CLIENT.RegisterCallback('NavigateUp', prev_section);
     RomFlowJS.CLIENT.RegisterCallback('NavigateDown', next_section);
     RomFlowJS.CLIENT.RegisterCallback('NavigateLeft', prev_item);
     RomFlowJS.CLIENT.RegisterCallback('NavigateRight', next_item);
+    RomFlowJS.CLIENT.RegisterCallback('NavigateForward', exec_rom);
 
 
     $(document).keyup(function (event) {
@@ -192,10 +214,11 @@ $(document).ready(function () {
 
     });
 
+   
 
     select_section(0);
     select_item(0);
 
-
+   
 
 });
