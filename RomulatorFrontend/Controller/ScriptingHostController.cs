@@ -89,6 +89,51 @@ namespace RomulatorFrontend.Controller
             return string.Join("|", roms);
         }
 
+        private static int LevenshteinDistance(string src, string dest)
+        {
+            int[,] d = new int[src.Length + 1, dest.Length + 1];
+            int i, j, cost;
+            char[] str1 = src.ToCharArray();
+            char[] str2 = dest.ToCharArray();
+
+            for (i = 0; i <= str1.Length; i++)
+            {
+                d[i, 0] = i;
+            }
+            for (j = 0; j <= str2.Length; j++)
+            {
+                d[0, j] = j;
+            }
+            for (i = 1; i <= str1.Length; i++)
+            {
+                for (j = 1; j <= str2.Length; j++)
+                {
+
+                    if (str1[i - 1] == str2[j - 1])
+                        cost = 0;
+                    else
+                        cost = 1;
+
+                    d[i, j] =
+                        Math.Min(
+                            d[i - 1, j] + 1,              // Deletion
+                            Math.Min(
+                                d[i, j - 1] + 1,          // Insertion
+                                d[i - 1, j - 1] + cost)); // Substitution
+
+                    if ((i > 1) && (j > 1) && (str1[i - 1] ==
+                        str2[j - 2]) && (str1[i - 2] == str2[j - 1]))
+                    {
+                        d[i, j] = Math.Min(d[i, j], d[i - 2, j - 2] + cost);
+                    }
+                }
+            }
+
+            return d[str1.Length, str2.Length];
+        }
+
+       
+
         public string GetArtworkURI(string emulator, string rom)
         {
             var rx = (from r in _configurationRoot.Emulators.EmulatorConfigurations where r.EmulatorName == emulator select r).FirstOrDefault();
@@ -96,18 +141,15 @@ namespace RomulatorFrontend.Controller
             if (rx == null)
                 return "";
 
-            var files = Directory.GetFiles(rx.PathToArtwork);
-            string result = "";
-            files
-                .ToList()
-                .ForEach(fx =>
-                {
-                    if (fx.ToLower().Contains(rom.ToLower())
-                        || rom.ToLower().Contains(fx))
-                        result = fx;
-                });
+            var files = Directory.GetFiles(rx.PathToArtwork).ToList().Select(a => Path.GetFileNameWithoutExtension(a));
 
-            return result;
+            if (!files.Any())
+                return "";
+
+          
+            var closest = files.OrderBy(o => LevenshteinDistance(rom.ToLower(), o.ToLower())).First();
+            return Directory.GetFiles(rx.PathToArtwork).Where(a => a.ToLower().Contains(closest.ToLower())).First();
+            // return Directory.GetFiles(rx.PathToArtwork).Where(a =>).First();
         }
 
         public void Execute(string emulator, string rom)
@@ -165,7 +207,7 @@ namespace RomulatorFrontend.Controller
                 d.Add(new RomflowEmulator() { Emulator = e, Roms = GetRoms(e).Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries).ToList() });
             }
 
-            string myString; 
+            string myString;
 
             using (MemoryStream stream = new MemoryStream())
             {
@@ -199,7 +241,7 @@ namespace RomulatorFrontend.Controller
             return _configurationRoot.Environment.SharePath;
         }
 
-     
+
 
         public void RestartWindows()
         {

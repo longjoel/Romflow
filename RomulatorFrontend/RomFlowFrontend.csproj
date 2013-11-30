@@ -153,22 +153,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="DefaultThemes\new_default_theme\index.html">
+    <Content Include="DefaultThemes\default\background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DefaultThemes\new_default_theme\jquery.min.js">
+    <Content Include="DefaultThemes\default\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DefaultThemes\new_default_theme\JSON.js">
+    <Content Include="DefaultThemes\default\jquery.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DefaultThemes\new_default_theme\main.css">
+    <Content Include="DefaultThemes\default\JSON.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DefaultThemes\new_default_theme\main.js">
+    <Content Include="DefaultThemes\default\main.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DefaultThemes\new_default_theme\romflow.js">
+    <Content Include="DefaultThemes\default\main.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\default\page.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\default\romflow.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RomFlowLicense.txt">
@@ -220,123 +226,6 @@
     <Content Include="7zalicense.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\animated-overlay.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_flat_0_aaaaaa_40x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_flat_0_eeeeee_40x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_flat_55_c0402a_40x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_flat_55_eeeeee_40x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_glass_100_f8f8f8_1x400.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_glass_35_dddddd_1x400.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_glass_60_eeeeee_1x400.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_inset-hard_75_999999_1x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-bg_inset-soft_50_c9c9c9_1x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_3383bb_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_454545_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_70b2e1_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_999999_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\images\ui-icons_fbc856_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\jquery-ui-1.10.3.custom.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\css\overcast\jquery-ui-1.10.3.custom.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\js\jquery-1.9.1.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\js\jquery-ui-1.10.3.custom.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\js\jquery-ui-1.10.3.custom.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\js\JSON.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\Menu.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Menu\RomFlowJS.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Rain\Index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Resource Include="DefaultThemes\Rain\RainTheme.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Content Include="DefaultThemes\Rain\RainTheme.xap">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Rain\RainThemeTestPage.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Resource Include="DefaultThemes\Rain\System.ComponentModel.DataAnnotations.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Content Include="DefaultThemes\Rain\romflow.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultThemes\Rain\System.ComponentModel.DataAnnotations.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Resource Include="DefaultThemes\Rain\System.Windows.Controls.Data.Input.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="DefaultThemes\Rain\System.Json.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="DefaultThemes\Rain\System.Json.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="DefaultThemes\Rain\System.Runtime.Serialization.Json.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="DefaultThemes\Rain\System.Runtime.Serialization.Json.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="DefaultThemes\Rain\System.Windows.Controls.Data.Input.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="DefaultThemes\Rain\System.Windows.Controls.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="DefaultThemes\Rain\System.Windows.Controls.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Content Include="EmulatorInfo.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -383,13 +272,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DefaultThemes\Rain\AppManifest.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

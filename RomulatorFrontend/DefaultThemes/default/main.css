@@ -1,0 +1,100 @@
+html
+{
+    background: url(background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+*
+{
+    text-decoration: none !important;
+    font-family:Consolas;
+    color:White;
+}
+
+div#root
+{
+    width: 99%;
+    height: 700px;
+    overflow: hidden;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    margin-top: -300px; /* height / -2 */
+}
+
+body
+{
+    overflow: hidden;
+}
+
+
+ul
+{
+    list-style: none !important;
+}
+
+li
+{
+    margin: 5px;
+}
+
+
+ul.root li ul
+{
+    overflow: hidden;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-align: center;
+}
+
+ul.root li ul li a
+{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+ul.root li ul li a img
+{
+    width: auto;
+    height: 70%;
+}
+
+li.selected
+{
+    width: 250px;
+    height: 350px;
+    border: 4px solid #AAAAAA;
+    border-radius:10px;
+    display: inline-block;
+    overflow: hidden;
+    margin:20px;
+    padding:20px;
+}
+li.medium
+{
+    width: 175px;
+    height: 275px;
+    display: inline-block;
+    overflow: hidden; /*border: 1px solid black;*/
+}
+li.small
+{
+    width: 150px;
+    height: 250px;
+    display: inline-block;
+    overflow: hidden; /*border: 1px solid black;*/
+}
+li.tiny
+{
+    width: 100px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden; /*border: 1px solid black;*/
+}

@@ -109,7 +109,7 @@ namespace RomulatorFrontend.View
                     Vars.RomRootPath, EmulatorListingComboBox.Text);
 
                 var artPath = System.IO.Path.Combine(
-                    Vars.RomRootPath, EmulatorListingComboBox.Text);
+                    Vars.ArtworkRootPath, EmulatorListingComboBox.Text);
 
                 var downloadURI = _emuConfigs[EmulatorListingComboBox.SelectedIndex][1];
 

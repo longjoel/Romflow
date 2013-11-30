@@ -36,10 +36,10 @@ namespace RomulatorFrontend.Model
         public ConfigurationEnvironment()
         {
             StartupCommands = new List<ConfigurationEnvironmentStartupCommand>();
-            GamepadPollRate = 250;
+            GamepadPollRate = 125;
             IsFullscreenOnStart = false;
             SharePath = "";
-            Theme = "Menu";
+            Theme = "default";
             ScanExternalMedia = false;
             HasReadLicense = false;
            
