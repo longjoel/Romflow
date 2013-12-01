@@ -582,8 +582,7 @@ namespace RomulatorFrontend.View
             Invoke(new Action(() =>
             {
                 SendMessage(this.Handle, 0x200, IntPtr.Zero, IntPtr.Zero);
-                //System.Threading.Thread.Sleep(200);
-                //Cursor.Position = new Point(1, 0);
+              
             }));
 
 
@@ -625,15 +624,13 @@ namespace RomulatorFrontend.View
             var themePath = "";
 
             if (System.IO.File.Exists(System.IO.Path
-                .Combine(Environment
-                .GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                "RomFlow", "themes", _configurationRoot.Environment.Theme, "Index.html")))
+                .Combine(Vars.ThemePath,
+                _configurationRoot.Environment.Theme, "Index.html")))
             {
 
                 themePath = System.IO.Path
-                .Combine(Environment
-                .GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                "RomFlow", "themes", _configurationRoot.Environment.Theme, "Index.html");
+                .Combine(Vars.ThemePath,
+                _configurationRoot.Environment.Theme, "Index.html");
             }
             else if (System.IO.File.Exists(System.IO.Path
                  .Combine(System.IO.Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DefaultThemes")),
@@ -650,7 +647,7 @@ namespace RomulatorFrontend.View
             {
                 themePath = System.IO.Path
                   .Combine(Path.GetFullPath("DefaultThemes"),
-                  "Menu", "Index.html");
+                  "default", "Index.html");
             }
 
             Invoke(new Action(() =>
