@@ -145,6 +145,12 @@
     <Compile Include="View\ConfigurationGamePadCollection.Designer.cs">
       <DependentUpon>ConfigurationGamePadCollection.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FirstRun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FirstRun.Designer.cs">
+      <DependentUpon>FirstRun.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,24 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DefaultThemes\default\romflow.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\default_grid\grid.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\default_grid\grid.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\default_grid\Index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\default_grid\jquery.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\default_grid\JSON.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultThemes\default_grid\romflow.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RomFlowLicense.txt">
@@ -216,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ConfigurationGamePadCollection.resx">
       <DependentUpon>ConfigurationGamePadCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FirstRun.resx">
+      <DependentUpon>FirstRun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

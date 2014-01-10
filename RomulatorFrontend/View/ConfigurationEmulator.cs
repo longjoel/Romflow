@@ -25,6 +25,12 @@ namespace RomulatorFrontend.View
 
         }
 
+        public ConfigurationEmulator():this(null)
+        {
+           
+
+        }
+
         private void SetPathEmulatorButton_Click(object sender, EventArgs e)
         {
             var openemupath = this.EmulatorPathTextBox.Text;
